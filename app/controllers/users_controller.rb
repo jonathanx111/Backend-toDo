@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :authenticate
 
     def show 
-        render json: user
+        render json: @user
     end
 
     def edit_profile
