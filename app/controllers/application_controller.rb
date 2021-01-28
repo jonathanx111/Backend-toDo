@@ -7,8 +7,8 @@ class ApplicationController < ActionController::API
         # Fake auth
         # @user = User.first
 
-        unless @user
-      render json: { error: "Unauthorized request" }, status: :unauthorized
+        unless !@user
+          render json: { error: "Unauthorized request" }, status: :unauthorized
         end
     # continue to the rest of the action
     end
