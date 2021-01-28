@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_070655) do
+ActiveRecord::Schema.define(version: 2021_01_28_043018) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "days", force: :cascade do |t|
     t.string "date"
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_070655) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "day_id"
+    t.bigint "user_id"
+    t.bigint "day_id"
     t.string "description"
     t.integer "points"
     t.boolean "done"
