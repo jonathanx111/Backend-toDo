@@ -12,4 +12,6 @@ class ApplicationController < ActionController::API
         end
     # continue to the rest of the action
     end
+
+    
 end
