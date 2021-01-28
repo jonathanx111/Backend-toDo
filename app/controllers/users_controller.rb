@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if payload
             # find/create user from payload (this will be a new method in the User model)
             user = User.from_google_signin(payload)
-            byebug
+            
             if user
                 # save user_id in token so we can use it in future requests
                 token = encode_token({ user_id: user.id })
