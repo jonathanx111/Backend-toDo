@@ -2,8 +2,8 @@ class ApplicationController < ActionController::API
     def authenticate
         # Auth with token
         # see app/services/authorize_request.rb for this code
-        @user = AuthorizeRequest.new!(request.headers).user
-    
+        @user = AuthorizeRequest.new(request.headers).user
+        
         # Fake auth
         # @user = User.first
 
