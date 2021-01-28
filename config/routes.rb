@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch "/tasks/:id", to: "tasks#edit_task"
   delete "/tasks/:id", to: "tasks#destroy"
   post "/tasks/", to: "tasks#create"
+  post "/google_login", to: "users#google_login"
 end
 
 
