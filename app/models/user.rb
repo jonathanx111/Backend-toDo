@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     def self.from_google_signin(payload)
         
-        user = nil
+        
         # find or create a user based on the email address from the Google payload
         return User.where(username: payload["email"]).first_or_create do |new_user|
             
@@ -21,6 +21,6 @@ class User < ApplicationRecord
             
         end
         
-        return user
+        
     end
 end
