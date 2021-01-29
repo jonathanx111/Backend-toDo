@@ -10,7 +10,7 @@ class User < ApplicationRecord
         
         user = nil
         # find or create a user based on the email address from the Google payload
-        User.where(username: payload["email"]).first_or_create do |new_user|
+        return User.where(username: payload["email"]).first_or_create do |new_user|
             
             new_user.username = payload["email"]
             new_user.points = 0
