@@ -10,14 +10,14 @@ class User < ApplicationRecord
         
         
         # find or create a user based on the email address from the Google payload
-        return User.where(username: payload["email"]).first_or_create do |new_user|
+        User.where(username: payload["email"]).first_or_create do |new_user|
             
             new_user.username = payload["email"]
             new_user.points = 0
             # we need to assign a password to satisfy bcrypt, so generate a random one...
             
             new_user.password = SecureRandom.base64(15)
-            user = new_user
+            
             
         end
         
